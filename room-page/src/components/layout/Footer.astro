@@ -1,0 +1,68 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import { ROUTES } from '../../constants/routes';
+
+import './Footer.scss';
+
+const footerData = await getEntry('footer', 'footer');
+---
+
+<footer class="footer-section" id={footerData.data.sectionId}>
+  <div class="common-container footer-container">
+    <div class="formula-container">
+      <form action="">
+        <input class="form-input" type="text" placeholder="Updates in your inbox...">
+        <button class="form-button" type="submit">GO</button>
+      </form>
+    </div>
+    <div class="footer-menu-container">
+      <nav class="footer-menu-nav">
+        <ul class="footer-menu-list">
+          <li class="footer-item">
+            <a href={ROUTES.HOME} class="footer-item-link">home</a>
+          </li>
+          <li class="footer-item">
+            <a href={ROUTES.SHOP} class="footer-item-link">shop</a>
+          </li>
+          <li class="footer-item">
+            <a href={ROUTES.ABOUT} class="footer-item-link">about</a>
+          </li>
+          <li class="footer-item">
+            <a href={ROUTES.CONTACT} class="footer-item-link">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="social-media-logos-container">
+      { 
+        footerData.data.socialMediaIcons.icon.slice(0,5)
+        .map((item:string, index:number) => {
+          return (
+            <a href={footerData.data.socialMediaLinks.link[index]}>
+              <div>
+                <Image class="social-media-icon"
+                        src={footerData.data.socialMediaIcons.src + item} 
+                        alt={footerData.data.socialMediaIcons.alt[index] } 
+                        width="30" 
+                        height="30"                         
+                />
+              </div>
+            </a> 
+          );
+        })       
+      }
+    </div>
+    <div class="logo-container">
+      <Image class="footer-logo-image" src={footerData.data.logoSrc} alt={footerData.data.logoAlt} width="100" height="20"/>
+    </div> 
+    <div class="footer-additional-info">
+      <div class="common-container footer-additional-info-text">
+        <p>
+          Copyright 2024. All Rights Reserved.
+        </p>
+      </div>
+    </div>   
+  </div>
+</footer>

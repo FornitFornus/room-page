@@ -1,0 +1,21 @@
+@import '../style/base';
+
+.main-room-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+
+  @include media('>=xsm', '<sm') {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include media('>=xl') {
+    max-width: 1440px;
+    margin: 0 auto;
+  }  
+}
+
+

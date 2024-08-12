@@ -10,8 +10,25 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.6.3",
     "@astrojs/check": "^0.5.10",
+    "@glidejs/glide": "^3.6.0",
+    "astro": "^4.6.3",
+    "include-media": "2.0.0",
+    "pristinejs": "1.1.0",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/glidejs__glide": "^3.6.5",
+    "autoprefixer": "10.4.19",
+    "cssnano": "7.0.1",
+    "glide": "0.2.0",
+    "hamburgers": "1.2.1",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "0.13.0",
+    "sass": "^1.75.0"
+  },
+  "engines": {
+    "npm": "^10.2.4",
+    "node": "^20.11.1"
   }
 }

@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import AboutManageBox from '../components/about-manage/AboutManageBox.astro';
+
+import LeftImage from '../assets/svgs/icon-angle-left.svg';
+import RightImage from '../assets/svgs/about-svg/bg-simplify-section-desktop.svg';
+import IllustrationIntro from '../assets/svgs/about-svg/illustration-intro.svg';
+
+import './AboutUs.scss';
+import TheySaid from '../components/they-said/TheySaid.astro';
+
+const aboutManage = await getCollection('about-manage');
+---
+
+<section class="about-section common-container" id="about_us">    
+    <div class="about-illustration-intro-container">
+      <Image class="about-illustration-intro" 
+              src={IllustrationIntro} 
+              alt="illustration info image" 
+      />
+    </div>
+
+    <div class="bring-everyone-container common-container">
+      <div class="text-container">
+        <h2 class="text-container-title league-spartan-semi-bold">
+          Bring everyone together to build better products.
+        </h2>
+        <p class="text-container-paragraph">
+          Manage makes it simple for software teams to plan day-to-day 
+          tasks while keeping the larger team goals in view.
+        </p>
+        <button class="text-container-button">Get Started</button>      
+      </div>
+    </div>
+
+    <div class="about-manage-container common-container">
+      <div class="text-container">
+        <h3 class="text-container-second-title league-spartan-semi-bold">
+          What’s different about Manage?
+        </h3>
+        <p class="text-container-paragraph">
+          Manage provides all the functionality your 
+          team needs, without the complexity. 
+          Our software is tailor-made for modern digital product teams. 
+        </p>
+      </div>            
+    </div>
+
+    <div class="about-manage-box">        
+      { aboutManage
+        .filter((el) => el.data.enabled)
+        .map((el) => {
+          return (
+            <AboutManageBox aboutManageContent={el} />
+          );                
+        }) 
+      }
+    </div>       
+
+    <div class="they-said-section">
+      <h4 class="text-container-third-title league-spartan-semi-bold">
+        What they’ve said
+      </h4>
+    </div>
+    
+    <div class="they-said-quote">        
+      <TheySaid />
+    </div>
+    
+</section>

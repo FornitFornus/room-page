@@ -1,0 +1,13 @@
+@import '../style/base';
+
+.room-section {
+  position: relative;  
+  max-width: 1440px;
+  overflow: hidden;  
+  top: 0;
+  padding:0; 
+  
+  @include media('>=sm') {
+    width: 100%;
+  }
+}

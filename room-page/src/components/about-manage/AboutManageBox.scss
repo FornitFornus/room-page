@@ -1,0 +1,64 @@
+@import '../../style/base';
+
+.about-manage-content {
+  display: block;  
+  margin-top: 4rem;
+
+  @include media('>=sm') {
+    grid-template-columns: 1fr 1fr 1fr;    
+  }  
+  
+  .common-container {
+    max-width: 375px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+
+    .text-container-about-manage {
+      display: grid;
+      width: 100%;            
+      grid-template-columns: 40px 1fr; 
+      grid-template-rows: 2fr;
+      grid-template-areas: 
+        "head-number head-title"
+        "content content";
+      margin-bottom: 1rem;
+      margin-top: 0.25rem;
+
+      .text-title-number {
+        grid-area: head-number;
+        position: relative;
+        font-size: 1.7rem;
+        font-weight: 600;         
+        color: $colorWhite;
+        background-color:$colorVeryDarkGrey; 
+        text-align: center; 
+        border-radius: 20px;            
+        padding: 10px 35px;               
+      }
+
+      .text-title {
+        grid-area: head-title;
+        position: relative;
+        font-size: 1.7rem;
+        font-weight: 600; 
+        text-align: right;
+        background-color:$colorDarkGrey;          
+        padding: 10px;
+        
+        z-index: -3;        
+      }
+
+      .paragraph-title {
+        grid-area: content;
+        font-size: 2rem; 
+        line-height: 2.5rem;
+        text-align: left;
+        color:$colorDarkGrey;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+    }
+  }
+}

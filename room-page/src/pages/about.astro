@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutUs from "../sections/AboutUs.astro";
+---
+
+<BaseLayout>
+  <AboutUs />
+</BaseLayout>
+
+<script>
+  const changeLogoColor = document.getElementsByClassName("header-logo-image") as HTMLCollectionOf<HTMLElement>;
+    
+    changeLogoColor.item(0)?.setAttribute("style", "filter:invert(100%)"); 
+    
+  const changeMenuColor = Array.from(document.getElementsByClassName('menu-item-link') as HTMLCollectionOf<HTMLElement>);  
+      
+    changeMenuColor.forEach((element) => {
+      element.style.color = 'black';      
+    });   
+  
+
+    /* const changeHoverColor = document.querySelectorAll(".menu-item-link");    
+      
+      console.log("changeHoverColor: " + changeHoverColor);
+      console.log(changeHoverColor); */
+ 
+</script>
+

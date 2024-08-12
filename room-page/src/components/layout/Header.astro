@@ -1,0 +1,34 @@
+---
+import MainMenu from './parts/MainMenu.astro';
+import Image from 'astro/components/Image.astro';
+import LogoImg from '/src/assets/svgs/logo.svg';
+
+import './Header.scss';
+---
+
+<script>
+  function resizeHeaderOnScrollListener(_e: Event) {
+    const headerEl = document.getElementById('main-header');
+
+    if (window.scrollY > 0 && !headerEl?.classList.contains('is-scrolled')) {
+      headerEl?.classList.add('is-scrolled');
+    }
+
+    if (window.scrollY === 0 && headerEl?.classList.contains('is-scrolled')) {
+      headerEl?.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', resizeHeaderOnScrollListener);
+</script>
+
+<header id="main-header" class="header-main-room-page">
+  <div class="header-main-container">
+    <div class="common-container header-content">
+      <a href="/" class="logo-image-container">
+        <Image class="header-logo-image" src={LogoImg} alt="Logo Serwis Ubezpieczeniowy" width="75" height="19" />
+      </a>      
+      <MainMenu />
+    </div>
+  </div>
+</header>

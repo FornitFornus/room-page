@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+import RoomSliderBox from '../components/room-slider/RoomSliderBox.astro';
+
+import'./RoomSlider.scss';
+
+const allRooms = await getCollection('room-slider');
+---
+
+<script>
+  import Glide from '@glidejs/glide';
+  
+  new Glide('.glide').mount();
+</script>
+
+
+<section class="room-section">
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">        
+          { allRooms
+              .filter((el) => el.data.enabled)
+              .map((el) => {
+                return (
+                  <li class="glide__slide">
+                    <RoomSliderBox dataContent={el} />                    
+                  </li>                  
+                );                
+              })
+          }               
+      </ul>      
+    </div>    
+  </div>
+</section>

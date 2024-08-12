@@ -1,0 +1,34 @@
+// Colors
+$colorWhite: hsl(0, 0%, 100%);
+$colorDarkGrey: hsl(0, 0%, 63%);
+$colorBlack: hsl(0, 0%, 0%);
+$colorVeryDarkGrey: hsl(0, 0%, 27%);
+
+// Main
+$colorStandard: $colorWhite;
+$colorMain: $colorBlack;
+// $colorAction: $colorGrey2;
+
+// Standard fonts colors
+$colorFontMainHeader: $colorBlack;
+$colorFontMainParagraph: $colorDarkGrey;
+$colorFontMainHover: $colorVeryDarkGrey;
+$colorFontAnchor: $colorDarkGrey;
+$colorFontIcon: $colorBlack;
+
+// Header
+$headerTransparentColor: rgba(255, 255, 255, 0.7);
+$headerColor: $colorWhite;
+$headerSecondaryColor: $colorBlack;
+$menuBorder: $colorWhite;
+$menuItemBorder: $colorWhite;
+$menuFontColorHover: $colorWhite;
+$menuFontColorActive: $colorWhite;
+$menuFontColorActiveSecondary: $colorBlack;
+
+// Footer
+$colorFooterSectionColor: $colorDarkGrey;
+$colorFooterFontColor: $colorWhite;
+$colorFooterFontColorSecondary: #222;
+
+

@@ -1,0 +1,10 @@
+$breakpoints: (
+  'xsm': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1590px,
+);
+
+@import '../../../node_modules/include-media/dist/include-media';

@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import LeftArrow from '../../../src/assets/svgs/icon-angle-left.svg';
+import RightArrow from '../../../src/assets/svgs/icon-angle-right.svg';
+
+
+import './RoomSliderBox.scss';
+import MyImageComponent from '../my-image/MyImageComponent.astro';
+
+export enum ImageOrder {
+  Left = 'left',
+  Right = 'right',
+}
+
+interface Props {
+  dataContent: CollectionEntry<'room-slider'>;      
+}
+
+const { dataContent} = Astro.props;
+const { Content } = await dataContent.render();
+---
+
+<div class="content-container">  
+  <div class="image-container">
+    <div class="image-content">
+      <div class="image-view">
+      <MyImageComponent mobileImageUrl={`${dataContent.data.mainImg.mobile.src}`}
+                        desktopImageUrl={`${dataContent.data.mainImg.desktop.src}`}
+                            alt={`${dataContent.data.mainImg.mobile.alt}`}
+      />
+      </div> 
+    
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">  
+          <Image src={LeftArrow} alt="left preview arrow"  />
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          <Image src={RightArrow} alt="right preview arrow" />
+        </button>
+      </div>
+      
+    </div>  
+  </div>
+ 
+       
+  <div class="common-container">
+    <div class="text-container common-text-styling">
+      <h2 class="text-title">
+        <Fragment set:html={dataContent.data.title} />
+      </h2>
+      <div class="paragraph-title">
+        <Content />
+      </div> 
+      <a href="/" class="shop-link uppercase">shop now</a>
+    </div>
+  </div>    
+</div>

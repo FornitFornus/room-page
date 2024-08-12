@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+
+import'./AboutFurniture.scss';
+import AboutFurnitureBox from '../components/about-furniture/AboutFurnitureBox.astro';
+
+const aboutFurniture = await getCollection('about-furniture');
+---
+
+<section class="about-furniture-section">
+  { aboutFurniture
+    .filter((el) => el.data.enabled)
+    .map((el) => {
+      return (
+        <AboutFurnitureBox aboutFurnitureContent={el} />
+      );                
+    })
+}       
+</section>

@@ -1,0 +1,44 @@
+.bg-color- {
+  &white {
+    background-color: $colorWhite;
+  }
+
+  &white {
+    color: $colorWhite;
+  }
+}
+
+.color- {
+  &white {
+    background-color: $colorWhite;
+  }
+
+  &white {
+    color: $colorWhite;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.d-none {
+  display: none;
+}
+
+.text- {
+  &center {
+    text-align: center;
+  }
+  &justify {
+    text-align: justify;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.menu-item-link-secondary-color {
+  color: $menuFontColorActiveSecondary;
+}

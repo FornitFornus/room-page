@@ -1,0 +1,17 @@
+// @import '../../../public/fonts/League_Spartan/static/';
+
+html {
+  font-family: 'League Spartan', 'Be Vietnam Pro', arial, sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: 700;
+}

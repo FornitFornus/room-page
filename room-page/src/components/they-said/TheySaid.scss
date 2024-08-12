@@ -1,0 +1,50 @@
+@import '../../style/base';
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+
+.quote-card-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  .quote-bullets {
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 4rem;
+  }  
+
+  .quote_arrow {
+    padding: 0 2rem;
+    
+    @include media('<=sm') {
+      display: none;
+    }
+  }
+
+  .glide__bullet {
+    width: 15px;
+    height: 15px;
+    background-color: $colorBlack;
+    border-color:$colorBlack;
+    border-radius: 15px;
+    margin: 0 10px; 
+    
+    &:hover {
+      background-color: $colorDarkGrey;
+      border-color: $colorDarkGrey;
+      border-radius: 10px;
+    }
+  }  
+
+  .quote-bullets {
+    
+    @include media('>=sm') {
+      display: none;
+    }    
+  }  
+}

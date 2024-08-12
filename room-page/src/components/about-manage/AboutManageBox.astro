@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import'./AboutManageBox.scss';
+
+interface Props {
+  aboutManageContent: CollectionEntry<'about-manage'>;      
+}
+
+const { aboutManageContent} = Astro.props;
+const { Content } = await aboutManageContent.render();
+---
+
+<div class="about-manage-content">  
+  <div class="common-container">
+    <div class="text-container-about-manage">      
+      <div class="text-title-number league-spartan-semi-bold">
+        <Fragment set:html={aboutManageContent.data.numberId} />
+      </div>
+      <h2 class="text-title league-spartan-semi-bold">
+        <Fragment set:html={aboutManageContent.data.title} />
+      </h2>      
+      <div class="paragraph-title be-vietnam-pro-regular">
+        <Content />
+      </div> 
+    </div>
+  </div>  
+</div>

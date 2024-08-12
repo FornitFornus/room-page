@@ -1,0 +1,73 @@
+---
+import QuoteCard from '../quote-card/QuoteCard.astro';
+
+import type { QuoteCart } from '../../constants/QuoteCart';
+
+import LeftArrow from '../../assets/svgs/icon-angle-left.svg';
+import RightArrow from '../../assets/svgs/icon-angle-right.svg';
+
+import { Image } from 'astro:assets';
+
+
+
+
+import './TheySaid.scss';
+
+const response = await fetch('https://zenquotes.io/api/quotes/');
+const data = await response.json();
+const quotesData = JSON.stringify(data);
+
+const quotes = JSON.parse(quotesData);
+---
+<script>
+  import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
+  
+  
+  new Glide('.glide', {
+    type: 'carousel', 
+    perView: 4,                   
+    breakpoints: {
+                  800: {
+                    perView: 4
+                  },
+                  500: {
+                    perView: 1
+                  },
+    }}).mount({Breakpoints, Controls}); 
+</script>
+
+<div class="quote-card-content">
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">  
+        { 
+          data.slice(0,4).map( (quote: QuoteCart) => { 
+            return (
+              <li class="glide__slide">
+                <QuoteCard item={quote} />                                   
+              </li>);            
+            })               
+        }
+      </ul>
+    </div>
+
+     <!-- <div class="quote_arrow">
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+      </div>
+    </div> -->
+    
+    <div class="quote-bullets">
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        <button class="glide__bullet" data-glide-dir="=0"></button>
+        <button class="glide__bullet" data-glide-dir="=1"></button>
+        <button class="glide__bullet" data-glide-dir="=2"></button>
+        <button class="glide__bullet" data-glide-dir="=3"></button>
+      </div>    
+    </div> 
+  </div>  
+</div>
+
+      
+

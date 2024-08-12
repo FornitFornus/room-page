@@ -1,0 +1,111 @@
+.common-btn-v1 {
+  position: relative;
+  display: inline-block;
+  border-radius: 50px;
+  border: 2px solid $colorBlack;
+  background-color: $colorBlack;
+  color: $colorWhite;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  cursor: pointer;
+  padding: 8px 60px;
+  margin: 20px 0 15px;
+
+  &:hover,
+  &:focus {
+    background-color: $colorWhite;
+    color: $colorWhite;
+  }
+
+  // .variant-v1 {}
+  &.variant-bank-v1 {
+    background-color: $colorWhite;
+    border-color: $colorWhite;
+    color: $colorWhite;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $colorWhite;
+    }
+  }
+
+  &.variant-large-v1 {
+    font-size: 1.8rem;
+    border-radius: 22px;
+  }
+}
+
+.common-btn-v2 {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  border: 2px solid $colorWhite;
+  background-color: $colorWhite;
+  color: $colorWhite;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+  padding: 10px 70px;
+  margin: 15px 0 15px;
+
+  @include media('>=lg') {
+    border-radius: 40px;
+    padding: 10px 190px;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin: 30px 0 40px;
+    color: $colorBlack;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $colorWhite;
+    color: $colorWhite;
+  }
+}
+
+.common-btn-v3 {
+  position: relative;
+  display: block;
+  border-radius: 25px;
+  border: 2px solid $colorWhite;
+  background-color: $colorWhite;
+  color: $colorWhite;
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  cursor: pointer;
+  min-width: 200px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 30px;
+  outline: none;
+
+  @include media('>=lg') {
+    border-radius: 40px;
+    font-size: 2.6rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $colorWhite;
+    color: $colorWhite;
+  }
+}

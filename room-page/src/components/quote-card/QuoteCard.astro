@@ -1,0 +1,22 @@
+---
+import type { QuoteCart } from '../../constants/QuoteCart';
+import { Image } from 'astro:assets';
+
+import './QuoteCard.scss';
+
+interface Props {
+  item: QuoteCart;
+}
+
+const { item } = Astro.props;
+---
+
+<div class="quote-card common-container">
+  <div class="quote-card-image">
+    <Image style="border-radius:50px" src=`https://zenquotes.io/img/${item.a.toLowerCase().replace(/\s/g, "-").replace(/[.]/g, "_")}.jpg` alt="fotka" width="80" height="80" />
+  </div>
+  <div class="quote-card-content">
+    <p class="quote-author">{item.a}</p>
+    <p class="quote">"{item.q}"</p>      
+  </div>  
+</div>

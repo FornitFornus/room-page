@@ -1,0 +1,93 @@
+// League Spartan - medium
+@font-face {
+  font-family: 'League Spartan';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/League_Spartan/static/LeagueSpartan-Medium.ttf'); 
+}
+
+.league-spartan-medium {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+// League Spartan - semi-bold
+@font-face {
+  font-family: 'League Spartan';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/public/fonts/League_Spartan/static/LeagueSpartan-SemiBold.ttf'); 
+}
+
+.league-spartan-semi-bold {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+// League Spartan - bold
+@font-face {
+  font-family: 'League Spartan';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/League_Spartan/static/LeagueSpartan-Bold.ttf'); 
+}
+
+.league-spartan-bold {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Be Vietnam Pro - regular
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-display: fallback;
+  font-style: normal;  
+  font-weight: 400;
+  src: url('/public/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf'); 
+}
+
+.be-vietnam-pro-regular {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+// Be Vietnam Pro - medium
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/Be_Vietnam_Pro/BeVietnamPro-Medium.ttf'); 
+}
+
+.be-vietnam-pro-medium {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Be Vietnam Pro - bold
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf');
+}
+
+.be-vietnam-pro-bold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
